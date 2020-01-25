@@ -9,9 +9,14 @@
                   view="_local">
             <loader/>
         </instance>
+        <collection id="ordersDc" view="_local" class="com.company.customers.entity.Order">
+            <loader id="ordersDl">
+                <query>
+                    <![CDATA[select e from customers_Order e where  e.customer =:custumer]]>
+                </query>
+            </loader>
+        </collection>
     </data>
-    <dialogMode height="600"
-                width="800"/>
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="custumerDc">
             <column width="250px">
@@ -20,7 +25,15 @@
                 <textField id="emailField" property="email"/>
             </column>
         </form>
-        <hbox id="editActions" spacing="true">
+        <groupBox caption="Orders" width="320px">
+            <table id="ordersTable" height="200px" width="300px">
+                <columns>
+                    <column id="a"/>
+                    <column id="b"/>
+                </columns>
+            </table>
+        </groupBox>
+        <hbox id="editActions" height="80%" margin="true,false,false,false" spacing="true">
             <button action="windowCommitAndClose"/>
             <button action="windowClose"/>
         </hbox>

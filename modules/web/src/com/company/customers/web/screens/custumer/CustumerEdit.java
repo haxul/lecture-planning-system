@@ -8,4 +8,5 @@ import com.company.customers.entity.Custumer;
 @EditedEntityContainer("custumerDc")
 @LoadDataBeforeShow
 public class CustumerEdit extends StandardEditor<Custumer> {
+
 }
