@@ -20,6 +20,8 @@ public class Custumer extends StandardEntity {
     @Column(name = "SURNAME")
     protected String surname;
 
+
+    
     @NotNull
     @Column(name = "EMAIL")
     @Email
