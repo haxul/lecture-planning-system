@@ -20,8 +20,9 @@ public class Custumer extends StandardEntity {
     @Column(name = "SURNAME")
     protected String surname;
 
+    @Column
+    protected String phone;
 
-    
     @NotNull
     @Column(name = "EMAIL")
     @Email
@@ -30,6 +31,14 @@ public class Custumer extends StandardEntity {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "OREDERS_ID")
     protected List<Order> orders;
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public List<Order> getOreders() {
         return orders;
